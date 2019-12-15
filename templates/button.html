@@ -11,9 +11,9 @@
 
                     {% if 'username' not in session %}
                 
-                       <a href="{{url_for('showLogin')}}" class="navbar-text navbar-margin-btn">
+                       <a href="{{url_for('showLogin')}}" class="navbar-text navbar-margin-btn my_btn hel">
                 
-                         <button type="button" class="btn btn-default navbar-btn">
+                         <button type="button" class="btn btn-default my_btn hel navbar-btn">
                 
                          LogIn
                 
@@ -23,9 +23,9 @@
                 
                        {% else %}
                 
-                       <a href="{{url_for('gdisconnect')}}" class="navbar-text navbar-margin-btn">
+                       <a href="{{url_for('gdisconnect')}}" class="navbar-margin-btn navbar-text my_btn hel">
                 
-                         <button type="button" class="btn btn-default navbar-btn">
+                         <button type="button" class=" navbar-btn  my_btn hel btn btn-default">
                 
                          Log Out
                 
@@ -36,35 +36,7 @@
                        {% endif %}
                 
                   </div>
-            <div>
-    
-                    {% if 'username' not in session %}
-                
-                       <a href="{{url_for('showLogin')}}" class="navbar-text navbar-margin-btn">
-                
-                         <button type="button" class="btn btn-default navbar-btn">
-                
-                         LogIn
-                
-                         </button>
-                
-                       </a>
-                
-                       {% else %}
-                
-                       <a href="{{url_for('gdisconnect')}}" class="navbar-text navbar-margin-btn">
-                
-                         <button type="button" class="btn btn-default navbar-btn">
-                
-                         Log Out
-                
-                         </button>
-                
-                       </a>
-                
-                       {% endif %}
-                
-                  </div>
+            
     </body>
         
 
