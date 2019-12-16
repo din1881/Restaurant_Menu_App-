@@ -369,17 +369,17 @@ menuItem1 = MenuItem(user_id=1, name="Chantrelle Toast", description="Crispy Toa
 session.add(menuItem1)
 session.commit
 
-menuItem1 = MenuItem(user_id=1, name="Guanciale Chawanmushi",
+menuItem2 = MenuItem(user_id=1 name="Guanciale Chawanmushi",
                      description="Japanese egg custard served hot with spicey Italian Pork Jowl (guanciale)", price="$6.95", course="Dessert", restaurant=restaurant1)
 
-session.add(menuItem1)
+session.add(menuItem2)
 session.commit()
 
 
-menuItem1 = MenuItem(user_id=1, name="Lemon Curd Ice Cream Sandwich",
+menuItem3 = MenuItem(user_id=1, name="Lemon Curd Ice Cream Sandwich",
                      description="Lemon Curd Ice Cream Sandwich on a chocolate macaron with cardamom meringue and cashews", price="$4.25", course="Dessert", restaurant=restaurant1)
 
-session.add(menuItem1)
+session.add(menuItem3)
 session.commit()
 
 
