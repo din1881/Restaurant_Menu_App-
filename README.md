@@ -8,12 +8,19 @@ This is a RESTful web application using the Python framework Flask along with im
 
 ## Skills Required
 1.Python
+
 2.Flask Framework
+
 3.SQL database
+
 4.AJAX
+
 5.Json
+
 6.HTML
+
 7.CSS
+
 8.OAuth
 
 ## How to run the program?
