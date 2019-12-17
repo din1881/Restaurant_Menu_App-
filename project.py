@@ -290,10 +290,15 @@ def newMenuItem(restaurant_id):
 # Edit a menu item
 @app.route('/restaurant/<int:restaurant_id>/menu/<int:menu_id>/edit', methods=['GET', 'POST'])
 def editMenuItem(restaurant_id, menu_id):
-    if 'username' not in login_session:
-        return redirect('/login')
     editedItem = session.query(MenuItem).filter_by(id=menu_id).one()
     restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
+    # Checking User's_id (Authorization)
+    itemCreator = getUserInfo(editedCategory.user_id)
+    user = getUserInfo(login_session['user_id'])
+    # Validation
+    if itemCreator.id != login_session['user_id']:
+        flash ("You cannot edit this item. This menu item is only editable by %s" % itemCreator.name)
+        return redirect('/login')
     if request.method == 'POST':
         if request.form['name']:
             editedItem.name = request.form['name']
@@ -314,10 +319,15 @@ def editMenuItem(restaurant_id, menu_id):
 # Delete a menu item
 @app.route('/restaurant/<int:restaurant_id>/menu/<int:menu_id>/delete', methods=['GET', 'POST'])
 def deleteMenuItem(restaurant_id, menu_id):
-    if 'username' not in login_session:
-        return redirect('/login')
     restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
     itemToDelete = session.query(MenuItem).filter_by(id=menu_id).one()
+    # Checking User's_id (Authorization)
+    itemCreator = getUserInfo(editedCategory.user_id)
+    user = getUserInfo(login_session['user_id'])
+    # Validation
+    if itemCreator.id != login_session['user_id']:
+        flash ("You cannot delete this item. This menu item is only deletable by %s" % itemCreator.name)
+        return redirect('/login')    
     if request.method == 'POST':
         session.delete(itemToDelete)
         session.commit()
